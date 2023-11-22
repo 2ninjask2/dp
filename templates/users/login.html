@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+{% include "head.html" %}
+{% include "header.html" %}
+<head>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="login">
+        <form method="post">
+            <h1>로그인</h1>
+            {% csrf_token%}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-login">로그인</button>
+            <a href="/users/signup/">회원가입 페이지로 이동</a>
+        </form>
+    </div>
+
+
+</body>
+{% include "footer.html" %}
+</html>
